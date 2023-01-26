@@ -14,7 +14,7 @@ import { SignInButton } from "./components/SignInButton";
 const MainContent = (props) => {
   return (
     <Router>
-      <Sidebar isAuthenticated={props.isAuthenticated}/>
+      <Sidebar />
       <Routes>
         <Route path="/overview" element={<Overview />} />
         <Route path="/reports" element={<Reports />} />
@@ -31,7 +31,7 @@ export default function App() {
   const isAuthenticated = useIsAuthenticated();
   return (
     <div className="App">
-      {isAuthenticated ? (
+      {/* {isAuthenticated ? (
         <AuthenticatedTemplate>
           <MainContent isAuthenticated={isAuthenticated}/>
         </AuthenticatedTemplate>
@@ -39,7 +39,8 @@ export default function App() {
         <UnauthenticatedTemplate>
           <SignInButton />
         </UnauthenticatedTemplate>
-      )}
+      )} */}
+      <MainContent isAuthenticated={isAuthenticated}/>
     </div>
   );
 }

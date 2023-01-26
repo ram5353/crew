@@ -1,9 +1,10 @@
 import React from 'react';
+import { TableDataComponent } from '../components/TableDataComponent';
 
 const Overview = () => {
   return (
-    <div className='home'>
-      <h1>Overview</h1>
+    <div style={{ paddingLeft: "18rem", paddingTop: "5rem"}}>
+      <TableDataComponent />
     </div>
   );
 };
