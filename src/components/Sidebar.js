@@ -10,7 +10,7 @@ import { useMsal } from "@azure/msal-react";
 
 const Nav = styled.div`
   background: #1c3d90;
-  height: 80px;
+  height: 70px;
   display: flex;
   overflow: hidden;
   align-items: center;
@@ -70,13 +70,15 @@ const Sidebar = (props) => {
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
-        <Nav>
+        <Nav style={{ position: "fixed", width: "100%", top: 0, zIndex: 1 }}>
           <NavIcon to="#">
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
           <h1 style={{ color: "white", paddingLeft: 20 }}>CREW</h1>
           <SignOutWrap>
-            <h5 style={{paddingRight: 20, paddingTop:7, color: "white"}}>{accounts[0].name}</h5>
+            {/* <h5 style={{ paddingRight: 20, paddingTop: 7, color: "white" }}>
+              {accounts[0].name}
+            </h5> */}
             <a
               style={{
                 color: "white",
@@ -99,7 +101,7 @@ const Sidebar = (props) => {
               <h1 style={{ color: "white", paddingLeft: 20 }}>CREW</h1>
             </Nav>
             {SidebarData.map((item, index) => {
-              return <SubMenu item={item} key={index} />;
+              return <SubMenu item={item} key={index} showSideBar={showSidebar} />;
             })}
           </SidebarWrap>
         </SidebarNav>
